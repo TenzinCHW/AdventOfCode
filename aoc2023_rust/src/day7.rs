@@ -51,7 +51,6 @@ fn count_cards_2(cs: Vec<Card>) -> (Vec<Card>, HashMap<Card, u32>) {
             new_cards = Vec::from([Card::One, Card::One, Card::One, Card::One, Card::One])
         } else {
             let most_card: Card = arg_max_no_j(&cards_count);
-            print!("{:?} ", most_card);
             cards_count.insert(most_card, cards_count[&most_card] + cards_count[&Card::J]);
             cards_count.remove_entry(&Card::J);
             for card in cs {
@@ -62,7 +61,6 @@ fn count_cards_2(cs: Vec<Card>) -> (Vec<Card>, HashMap<Card, u32>) {
                 }
             }
         }
-        println!("{:?}", new_cards);
     }
     (new_cards, cards_count)
 }
@@ -116,10 +114,8 @@ struct Hand {
 impl Hand {
     fn from(hand_line: &str, count_fn: &dyn Fn(Vec<Card>) -> (Vec<Card>, HashMap<Card, u32>)) -> Hand {
         let hand: Vec<Card> = hand_line.chars().map(|x| type_of_card(x)).collect();
-        print!("{hand_line} ");
         let (new_hand, cards_count): (Vec<Card>, HashMap<Card, u32>) = count_fn(hand);
         let hand_type: HandType = type_of_hand(cards_count);
-        println!("{:?}", hand_type);
 
         Hand {
             hand_type: hand_type,

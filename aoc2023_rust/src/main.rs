@@ -4,9 +4,10 @@ mod day1;
 //mod day4;
 //mod day5;
 //mod day6;
-mod day7;
+//mod day7;
 //mod day8;
 //mod day9;
+mod day11;
 //mod day15;
 
 
@@ -71,9 +72,9 @@ fn main() {
     //println!("{ans}");
 
     //// Day 7
-    let input_file = "../data/day7.txt";
-    let ans = day7::day7_p2(input_file).unwrap();
-    println!("{ans}");
+    //let input_file = "../data/day7.txt";
+    //let ans = day7::day7_p2(input_file).unwrap();
+    //println!("{ans}");
 
     //// Day 8
     //let input_file = "../data/day8.txt";
@@ -84,6 +85,11 @@ fn main() {
     //let input_file = "../data/day9.txt";
     //let ans = day9::day9_p2(input_file).unwrap();
     //println!("{ans}");
+
+    //// Day 11
+    let input_file = "../data/day11.txt";
+    let ans = day11::day11_p2(input_file).unwrap();
+    println!("{ans}");
 
     //// Day 15
     //let input_file = "../data/day15.txt";
